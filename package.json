@@ -7,7 +7,8 @@
     "start": "nodemon main.ts",
     "build": "tsc -p .",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migrate": "rm -rf build && yarn build && yarn typeorm migration:generate ./src/migrations/added-user-entity -d ./src/service/postgresql.ts",
+    "migration:create": "rm -rf build && yarn build && yarn typeorm migration:create -o ./migration", 
+    "migrate": "rm -rf build && yarn build && yarn typeorm migration:generate ./migration -d ./service/postgresql.ts",
     "db:push": "rm -rf build && yarn build && yarn typeorm migration:run -d service/postgresql.ts"
   },
   "author": "Gunawan Prasetya",

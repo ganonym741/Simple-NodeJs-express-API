@@ -16,6 +16,7 @@ export const myDataSource = new DataSource({
     type: "postgres",
     entities: ['src/entity/**/*.entity{.js,.ts}'],
     migrations: ['src/migrations/**/*{.ts,.js}'],
+    migrationsTableName: "migration",
     logging: false,
     synchronize: true,
 })  
